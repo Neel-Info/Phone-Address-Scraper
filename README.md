@@ -13,6 +13,18 @@ This codebase contains python scripts using Playwright, BeautifulSoup and Pandas
 
 ## Algorithm
 
+### Web Scraping
+
+For extracting phone number and addresses from websites data, we first need to make a request to that website to get their html content. For this I am using a Python library named Playwright to make web requests and getting html content of that page. Below is the algorithm for the same.
+
+<ol>
+    <li>Read the CSV file using pandas to get the domains</li>
+    <li>Create a Thread Pool of 20 threads</li>
+    <li>Inside each Thread, create a browser using playwright's API</li>
+    <li>Create a new browser page, and visit the domain</li>
+    <li>Get the html content for that page and use this html to extract phone numbers and addresses.</li>
+</ol>
+
 ### Phone Number Extraction
 
 I have used to following algorithm to extract phone numbers from website's html code.
