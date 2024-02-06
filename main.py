@@ -59,8 +59,8 @@ def process_url(url):
 
 def main():
     # Read CSV file with pandas
-    input_file = '28k.csv'
-    df = read_csv_with_limit(input_file, limit=30)
+    input_file = 'data/28k.csv'
+    df = read_csv_with_limit(input_file, limit=1)
 
     # Create a thread pool with max_workers=20
     with ThreadPoolExecutor(max_workers=20) as executor:
@@ -70,7 +70,7 @@ def main():
     result_df = pd.DataFrame(results)
 
     # Save the results to a new CSV file
-    result_df.to_csv('output_results.csv', index=False)
+    result_df.to_csv('out/output_results.csv', index=False)
 
 
 if __name__ == "__main__":
